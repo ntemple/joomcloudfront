@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="component" version="1.5.0" method="upgrade">
+	<name>cloudfront</name>
+	<author>Intellispire</author>
+	<creationDate>2009-12-07</creationDate>
+	<copyright>(C) 2009 Intellispire. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>info@intellispire.com</authorEmail>
+	<authorUrl>www.intellispire.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Cloufront management for Joomla!</description>
+
+	<!-- Application/site -->
+	<files folder="components/com_cloudfront">
+		<file>index.html</file>
+	</files>
+	
+	<!-- Application/administrator -->
+	<administration>
+		<menu>Cloudfront</menu>
+
+		<files folder="administrator/components/com_cloudfront">
+                        <file>index.html</file>
+			<file>cloudfront.php</file>
+                        <file>controller.php</file>
+			<folder>controllers</folder>
+			<folder>install</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+                        <folder>classes</folder>
+                        <folder>help</folder>
+                        <folder>tables</folder>
+		</files>
+	</administration>
+		
+	<!-- Installation -->
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install/install.sql</file>
+		</sql>
+	</install>
+
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">install/uninstall.sql</file>
+		</sql>
+	</uninstall>
+
+	<installfile>install.php</installfile>
+	<uninstallfile>install/uninstall.php</uninstallfile>
+</install>
+

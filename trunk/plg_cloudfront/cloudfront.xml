@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="system" method="upgrade">
+        <name>System - CloudFront</name>
+        <author>Intellispire</author>
+        <creationDate>${date}</creationDate>
+        <copyright>Copyright(C) 2008 - 2009 Intellispire, LLC.</copyright>
+        <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+        <authorEmail>admin@intellispire.com</authorEmail>
+        <authorUrl>www.intellispire.com</authorUrl>
+        <version>1.1.${svn.lastrevision}</version>
+        <description>Link to static content on Cloudfront. Manages uploading files and rewriting the urls.</description>
+        <files>
+                <filename plugin="cloudfront">cloudfront.php</filename>
+        </files>
+        <params>
+           <param name="API_AMAZON_ACCESS_KEY" label="AWS Access Key" type="text" size="40" />
+           <param name="API_AMAZON_SECRET" label="AWS Secret Key" type="text" size="40" />
+           <param name="bucket"       type="text" default="" label="S3 Bucket"  size="60"/>
+           <param name="bucketbase"   type="text" default="" label="Bucket Base" description="Base path inside bucket for files. Use for versioning."/>
+
+           <param name="hostname" type="text" default="" label="Your Site's Hostname" description="Enter the hostname for your site.  Example: www.example.com. Leave blank to auto-detect." />
+           <param name="basedir" type="text" default="" label="Base Directory" description="Enter the path where your site lives. Leave blank to auto-detect." />
+
+           <param name="runmode" type="list" default="0" label="Run Mode">
+             <option value='0'>Local Only</option>
+             <option value='1'>Use CloudFront</option>
+           </param>
+
+           <param name="discoverymode" type="list" default="0" label="URL Discovery">
+             <option value='0'>Disable</option>             
+             <option value='1'>Discover</option>
+             <option value='5'>Clear Cache</option>
+           </param>
+<!--
+           <param name="trace" type="list" default="0" label="Trace">
+             <option value='0'>No Trace</option>
+             <option value='1'>Full Trace</option>
+           </param>
+-->
+
+        </params>
+</install>
